@@ -16,7 +16,7 @@ const RegisterPage = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:3000/api/register', {
+            const response = await axios.post('https://falaon.onrender.com/api/register', {
                 email,
                 password
             });
