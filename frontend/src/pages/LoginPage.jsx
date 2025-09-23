@@ -1,5 +1,5 @@
 import logo from '../assets/logo.png';
-import imageFooter from '../assets/imagem rodapé.png';
+import imageFooter from '../assets/faixa horizontal 2.png';
 import backIcon from '../assets/back.png'
 import { useState } from 'react';
 import axios from 'axios';
@@ -33,11 +33,11 @@ const LoginPage = () => {
                 <div className="flex items-center gap-3 relative">
                     <h1 className="text-3xl sm:text-4xl text-black relative">Login</h1>
                     {/* Linha laranja */}
-                    <div className="absolute -bottom-3 w-16 h-1 bg-orange-500 rounded-md left-1/2 -translate-x-1/2"></div>
+                    <div className="absolute -bottom-6 w-16 h-1 bg-orange-500 rounded-md left-1/2 -translate-x-1/2"></div>
                 </div>
                 {/* Botão "Voltar" posicionado à direita */}
-                <div className="absolute right-0 md:right-5 flex items-center gap-1 cursor-pointer">
-                    <img src={backIcon} alt="Voltar" className="w-12 h-12 md:w-16 md:h-16" />
+                <div className="absolute right-0 md:right-5 flex items-center gap-1 cursor-pointer mb-12">
+                    <img src={backIcon} alt="Voltar" className="w-12 h-12 md:w-16 md:h-16 " />
                     <span className="text-black text-lg md:text-xl hidden sm:inline">Voltar</span>
                 </div>
             </div>
@@ -68,13 +68,13 @@ const LoginPage = () => {
                 <img
                     src={logo}
                     alt="Logo"
-                    className="absolute -left-16 bottom-8 w-24 h-auto object-cover md:-left-28 md:w-32 lg:-left-32 hidden md:block"
+                    className="absolute -left-48 bottom-8 w-36 h-auto object-cover md:-left-56 md:w-48 lg:-left-72 hidden md:block"
                 />
             </div>
 
             {/* Imagem do rodapé com largura total */}
             <footer className="absolute bottom-0 w-full">
-                <img src={imageFooter} alt="Rodapé" className="w-full h-auto object-cover"/>
+                <img src={imageFooter} alt="Rodapé" className="w-full h-24 md:h-auto object-cover" />
             </footer>
         </div>
     )

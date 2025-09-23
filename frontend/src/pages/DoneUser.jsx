@@ -1,18 +1,26 @@
 import React from 'react';
-import footerImage from '../assets/imagem rodapé.png'; // Renomeei para evitar conflito com o nome da função
+import footerImage from '../assets/faixa horizontal 2.png';
+import logo from '../assets/logo.png';
 
 const DoneUser = () => {
-  // 1. Crie a função que irá mostrar o alerta
   const handleCadastro = () => {
     alert('Cadastro concluído com sucesso!');
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-between">
+    <div className="min-h-screen bg-gray-100 flex flex-col justify-between relative">
       {/* Conteúdo principal do formulário */}
       <div className="p-4 flex-grow">
-        <div className="bg-white p-8 rounded-lg shadow-xl w-full max-w-4xl mx-auto">
-          <h1 className="text-center text-4xl font-bold mb-8 text-gray-800">CADASTRO</h1>
+        <div className="bg-white p-8 rounded-lg shadow-xl w-full max-w-4xl mx-auto mb-24">
+          
+          {/* Título centralizado com a linha laranja */}
+          <div className="flex justify-center mb-16">
+            <div className="flex items-center gap-3 relative">
+              <h1 className="text-3xl sm:text-4xl text-black relative">Cadastro</h1>
+              {/* Linha laranja */}
+              <div className="absolute -bottom-6 w-16 h-1 bg-orange-500 rounded-md left-1/2 -translate-x-1/2"></div>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Seção de Informações Pessoais */}
@@ -154,19 +162,24 @@ const DoneUser = () => {
           <div className="mt-8 text-center">
             <button
               type="button"
-              // 2. Adicione a função 'handleCadastro' ao evento onClick
-              onClick={handleCadastro} 
+              onClick={handleCadastro}
               className="inline-flex justify-center py-3 px-8 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
             >
               CADASTRAR
             </button>
           </div>
+
+          {/* Logo adicionado abaixo do botão de cadastro com margem superior */}
+          <div className="flex justify-start mt-8">
+            <img src={logo} alt="Logo" className="h-28 w-auto" />
+          </div>
+
         </div>
       </div>
 
       {/* Footer com a imagem */}
-      <footer className="bg-cover bg-center" style={{ backgroundImage: `url(${footerImage})`, height: '100px' }}>
-        {/* Você pode adicionar conteúdo adicional aqui se necessário */}
+      <footer className="absolute bottom-0 w-full">
+        <img src={footerImage} alt="Rodapé" className="w-full h-32 md:h-auto object-cover" />
       </footer>
     </div>
   );
