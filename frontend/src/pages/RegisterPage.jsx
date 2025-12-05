@@ -53,7 +53,8 @@ const RegisterPage = () => {
             </div>
 
             <div className="relative w-full max-w-md md:max-w-lg">
-                <div className="bg-black flex flex-col gap-3 p-5 rounded-t-3xl w-full h-auto min-h-[350px] relative justify-center">
+                {/* ALTERAÇÃO AQUI: De 'rounded-t-3xl' para 'rounded-3xl' */}
+                <div className="bg-black flex flex-col gap-3 p-5 rounded-3xl w-full h-auto min-h-[350px] relative justify-center">
                     <input 
                         type="text" 
                         placeholder="E-mail: " 
@@ -95,7 +96,8 @@ const RegisterPage = () => {
             </div>
 
             <footer className="absolute bottom-0 w-full">
-                <img src={imageFooter} alt="Rodapé" className="w-full h-24 md:h-auto object-cover" />
+                {/* ALTERAÇÃO AQUI: Aumentei de h-24 para h-36 no mobile e fixei md:h-48 no desktop */}
+                <img src={imageFooter} alt="Rodapé" className="w-full h-36 md:h-48 object-cover" />
             </footer>
         </div>
     )
