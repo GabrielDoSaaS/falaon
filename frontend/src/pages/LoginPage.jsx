@@ -27,8 +27,11 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="min-h-screen w-screen text-white flex flex-col items-center justify-center gap-5 relative px-4 py-8">
-            {/* Bloco do título "Cadastro" e botão "Voltar" */}
+        // ALTERAÇÃO AQUI: Mudei de "justify-center" para "justify-start md:justify-center"
+        // e adicionei "pt-12 md:pt-8 overflow-hidden" para ficar igual ao RegisterPage
+        <div className="min-h-screen w-screen text-white flex flex-col items-center justify-start md:justify-center gap-5 relative px-4 py-8 pt-12 md:pt-8 overflow-hidden">
+            
+            {/* Bloco do título "Login" e botão "Voltar" */}
             <div className="w-full flex justify-center items-center mb-20 md:mb-[150px] lg:mb-[200px] relative">
                 <div className="flex items-center gap-3 relative">
                     <h1 className="text-3xl sm:text-4xl text-black relative">Login</h1>
@@ -59,7 +62,7 @@ const LoginPage = () => {
                         onChange={(e)=>setPassword(e.target.value)}
                     />
 
-                    {/* Checkbox e Texto de Declaração */}
+                    {/* Checkbox e Texto de Declaração podem ser inseridos aqui se necessário no futuro */}
 
                     <button className="text-white bg-orange-500 p-2 rounded-lg mt-4" onClick={()=>handleRegister()}>Confirmar</button>
                 </div>
