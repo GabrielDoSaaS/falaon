@@ -155,7 +155,7 @@ const DoneUser = () => {
               className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
             />
             <label htmlFor="novidades" className="ml-2 block text-sm text-gray-700">
-              Quero receber novidades, ofertas e aulas gratuitas por e-mail
+              Quero receber novidades, ofertas e informações de aulas gratuitas por e-mail
             </label>
           </div>
 
