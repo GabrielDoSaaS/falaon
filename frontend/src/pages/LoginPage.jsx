@@ -20,10 +20,10 @@ const LoginPage = () => {
     };
 
     return (
-        /* Alterado de w-screen para w-full e garantido o overflow-x-hidden para evitar qualquer scroll lateral */
+    
         <div className="min-h-screen w-full text-white flex flex-col items-center justify-center gap-5 relative px-4 py-8 overflow-x-hidden">
             
-            {/* Bloco do título "Login" e botão "Voltar" */}
+  
             <div className="w-full max-w-4xl flex justify-center items-center mb-20 md:mb-[150px] lg:mb-[200px] relative">
                 <div className="flex items-center gap-3 relative">
                     <h1 className="text-3xl sm:text-4xl text-black relative">Login</h1>
@@ -38,10 +38,10 @@ const LoginPage = () => {
                 </div>
             </div>
 
-            {/* Container relativo para posicionar a logo em relação à div preta */}
+           
             <div className="relative w-full max-w-md md:max-w-lg">
                 
-                {/* Div preta (card) com todas as bordas arredondadas */}
+    
                 <div className="bg-black flex flex-col gap-3 p-5 rounded-3xl w-full h-auto min-h-[350px] relative justify-center shadow-2xl z-10">
                     <input 
                         type="text" 
