@@ -5,7 +5,10 @@ import SucessPage from "./pages/SucessPage";
 import LoginPage from "./pages/LoginPage";
 import DoneUser from "./pages/DoneUser";
 import Home from "./pages/Home";
-
+import Infos from "./pages/Infos";
+import ChangeEmail from "./pages/ChangeEmail";
+import ChangePessoal from "./pages/ChangePessoal";
+import MyAccount from "./pages/MyAccount";
 
 function App() {
   return (
@@ -17,6 +20,11 @@ function App() {
                 <Route path="/login" element={<LoginPage/>}/>
                 <Route path="/doneUser" element={<DoneUser/>}/>
                 <Route path="/finish" element={<RegisterInitFinish/>} ></Route>
+                <Route path="/info" element={<Infos/>} ></Route>
+                <Route path="/changeemail" element={<ChangeEmail/>} ></Route> 
+                <Route path="/changePessoal" element={<ChangePessoal/>} ></Route>
+                <Route path="/myaccount" element={<MyAccount/>} ></Route>
+                <Route path="*" element={<h1>404 - Not Found</h1>} />
             </Routes>
         </BrowserRouter>
   )

@@ -64,13 +64,11 @@ const DoneUser = () => {
 
             {/* Seção de Observações */}
             <div>
-              <h2 className="text-2xl font-semibold mb-4 text-gray-700 border-b pb-2">Observações</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-gray-700 border-b pb-2">Observação</h2>
               <p className="text-gray-600 text-sm mb-2">
                 Somente será visível para os outros usuários o seu nome social (Público).
               </p>
-              <p className="text-gray-600 text-sm">
-                Colocar o CPF é opcional, no entanto, quem colocar e se for confirmado a autenticidade do mesmo receberá selo no perfil de verificado.
-              </p>
+    
             </div>
           </div>
 
@@ -155,7 +153,7 @@ const DoneUser = () => {
               className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
             />
             <label htmlFor="novidades" className="ml-2 block text-sm text-gray-700">
-              Quero receber novidades, ofertas e aulas gratuitas por e-mail
+              Quero receber novidades, ofertas e informações de aulas gratuitas por e-mail
             </label>
           </div>
 
@@ -178,9 +176,6 @@ const DoneUser = () => {
       </div>
 
       {/* Footer com a imagem */}
-      <footer className="absolute bottom-0 w-full">
-        <img src={footerImage} alt="Rodapé" className="w-full h-32 md:h-auto object-cover" />
-      </footer>
     </div>
   );
 };

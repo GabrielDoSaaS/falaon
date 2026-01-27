@@ -1,5 +1,4 @@
 import logo from '../assets/logo.png';
-import imageFooter from '../assets/faixa horizontal 2.png';
 import backIcon from '../assets/back.png'
 import { useState } from 'react';
 import axios from 'axios';
@@ -7,77 +6,73 @@ import axios from 'axios';
 const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [termsAccepted, setTermsAccepted] = useState(false);
 
-    const handleRegister = async () => {
-        if (!termsAccepted) {
-            alert('Você deve aceitar os termos de uso para continuar.');
-            return;
-        }
-
+    const handleLogin = async () => {
         try {
-            const response = await axios.post('http://localhost:3000/api/register', {
+            await axios.post('http://localhost:3000/api/login', {
                 email,
                 password
             });
-            alert('Cadastro realizado com sucesso!');
+            alert('Login realizado com sucesso!');
         } catch (error) {
-            alert('Erro ao cadastrar. Tente novamente.');
+            alert('Erro ao fazer login. Verifique suas credenciais.');
         }
     };
 
     return (
-        <div className="min-h-screen w-screen text-white flex flex-col items-center justify-center gap-5 relative px-4 py-8">
-            {/* Bloco do título "Cadastro" e botão "Voltar" */}
-            <div className="w-full flex justify-center items-center mb-20 md:mb-[150px] lg:mb-[200px] relative">
+        /* Alterado de w-screen para w-full e garantido o overflow-x-hidden para evitar qualquer scroll lateral */
+        <div className="min-h-screen w-full text-white flex flex-col items-center justify-center gap-5 relative px-4 py-8 overflow-x-hidden">
+            
+            {/* Bloco do título "Login" e botão "Voltar" */}
+            <div className="w-full max-w-4xl flex justify-center items-center mb-20 md:mb-[150px] lg:mb-[200px] relative">
                 <div className="flex items-center gap-3 relative">
                     <h1 className="text-3xl sm:text-4xl text-black relative">Login</h1>
                     {/* Linha laranja */}
                     <div className="absolute -bottom-6 w-16 h-1 bg-orange-500 rounded-md left-1/2 -translate-x-1/2"></div>
                 </div>
+
                 {/* Botão "Voltar" posicionado à direita */}
-                <div className="absolute right-0 md:right-5 flex items-center gap-1 cursor-pointer mb-12">
-                    <img src={backIcon} alt="Voltar" className="w-12 h-12 md:w-16 md:h-16 " />
+                <div className="absolute right-0 flex items-center gap-1 cursor-pointer mb-12">
+                    <img src={backIcon} alt="Voltar" className="w-12 h-12 md:w-16 md:h-16" />
                     <span className="text-black text-lg md:text-xl hidden sm:inline">Voltar</span>
                 </div>
             </div>
 
             {/* Container relativo para posicionar a logo em relação à div preta */}
             <div className="relative w-full max-w-md md:max-w-lg">
-                {/* Div preta (card) */}
-                <div className="bg-black flex flex-col gap-3 p-5 rounded-3xl w-full h-auto min-h-[350px] relative justify-center">
+                
+                {/* Div preta (card) com todas as bordas arredondadas */}
+                <div className="bg-black flex flex-col gap-3 p-5 rounded-3xl w-full h-auto min-h-[350px] relative justify-center shadow-2xl z-10">
                     <input 
                         type="text" 
                         placeholder="E-mail: " 
-                        className="bg-white p-2 text-black rounded-3xl mb-4 md:mb-8"
-                        onChange={(e)=>setEmail(e.target.value)}
+                        className="bg-white p-2 text-black rounded-3xl mb-4 md:mb-8 outline-none focus:ring-2 focus:ring-orange-500"
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                     <input 
                         type="password" 
                         placeholder="Senha: " 
-                        className="bg-white p-2 text-black rounded-3xl mb-4"
-                        onChange={(e)=>setPassword(e.target.value)}
+                        className="bg-white p-2 text-black rounded-3xl mb-4 outline-none focus:ring-2 focus:ring-orange-500"
+                        onChange={(e) => setPassword(e.target.value)}
                     />
 
-                    {/* Checkbox e Texto de Declaração */}
-
-                    <button className="text-white bg-orange-500 p-2 rounded-lg mt-4" onClick={()=>handleRegister()}>Confirmar</button>
+                    <button 
+                        className="text-white bg-orange-500 p-2 rounded-lg mt-4 hover:bg-orange-600 transition-colors font-bold" 
+                        onClick={handleLogin}
+                    >
+                        Confirmar
+                    </button>
                 </div>
 
-                {/* Logo posicionada em relação à div preta - visível apenas em telas médias e grandes */}
+                {/* Logo lateral - Ajustada para não empurrar a largura da página */}
                 <img
                     src={logo}
                     alt="Logo"
-                    className="absolute -left-48 bottom-8 w-36 h-auto object-cover md:-left-56 md:w-48 lg:-left-72 hidden md:block"
+                    className="absolute -left-32 bottom-8 w-36 h-auto object-cover md:-left-48 md:w-48 lg:-left-64 hidden md:block z-0"
                 />
             </div>
-
-            {/* Imagem do rodapé com largura total */}
-            <footer className="absolute bottom-0 w-full">
-                <img src={imageFooter} alt="Rodapé" className="w-full h-24 md:h-auto object-cover" />
-            </footer>
         </div>
-    )
-}
+    );
+};
 
 export default LoginPage;
