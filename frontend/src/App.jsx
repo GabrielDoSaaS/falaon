@@ -9,6 +9,7 @@ import Infos from "./pages/Infos";
 import ChangeEmail from "./pages/ChangeEmail";
 import ChangePessoal from "./pages/ChangePessoal";
 import MyAccount from "./pages/MyAccount";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
@@ -25,9 +26,11 @@ function App() {
                 <Route path="/changePessoal" element={<ChangePessoal/>} ></Route>
                 <Route path="/myaccount" element={<MyAccount/>} ></Route>
                 <Route path="*" element={<h1>404 - Not Found</h1>} />
+                <Route path="/home" element={<HomePage/>} />
             </Routes>
         </BrowserRouter>
   )
 }
+
 
 export default App

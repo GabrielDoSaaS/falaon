@@ -25,7 +25,7 @@ const RegisterPage = () => {
         }
 
         try {
-            const response = await axios.post('https://falaon.onrender.com/api/register', {
+            await axios.post('https://falaon.onrender.com/api/register', {
                 email,
                 password
             });
@@ -36,11 +36,12 @@ const RegisterPage = () => {
     };
 
     return (
-        <div className="min-h-screen w-screen text-white flex flex-col items-center justify-start md:justify-center gap-5 relative px-4 py-8 pt-12 md:pt-8 overflow-hidden">
+        // Justify-between e remoção de padding inferior para o bloco colar no fundo
+        <div className="min-h-screen w-screen text-white flex flex-col items-center justify-between relative overflow-hidden">
 
             {/* Cabeçalho / Botão Voltar */}
-            <div className="w-full flex items-center justify-center mb-20 md:mb-[150px] lg:mb-[200px] relative">
-                <div className="absolute right-0 flex items-center gap-1 cursor-pointer mb-12">
+            <div className="w-full flex items-center justify-center mt-12 md:mt-20 px-4 relative">
+                <div className="absolute right-4 flex items-center gap-1 cursor-pointer">
                     <img src={backIcon} alt="Voltar" className="w-12 h-12 md:w-16 md:h-16" />
                     <span className="text-black text-lg md:text-xl hidden sm:inline">Voltar</span>
                 </div>
@@ -52,19 +53,20 @@ const RegisterPage = () => {
             </div>
 
             {/* Container do Formulário */}
-            <div className="relative w-full max-w-md md:max-w-lg">
-                {/* Alterado de rounded-t-3xl para rounded-3xl para arredondar embaixo também */}
-                <div className="bg-black flex flex-col gap-3 p-5 rounded-3xl w-full h-auto min-h-[350px] relative justify-center shadow-xl">
+            <div className="relative w-full max-w-md md:max-w-lg mt-auto">
+                
+                {/* Bloco Preto: Arredondado apenas no topo e colado na base */}
+                <div className="bg-black flex flex-col gap-3 p-6 md:p-8 rounded-t-[40px] w-full relative shadow-2xl z-10">
                     <input 
                         type="text" 
                         placeholder="E-mail: " 
-                        className="bg-white p-2 text-black rounded-3xl mb-4 md:mb-8"
+                        className="bg-white p-3 text-black rounded-3xl mb-2 md:mb-4 outline-none focus:ring-2 focus:ring-orange-500"
                         onChange={(e)=>setEmail(e.target.value)}
                     />
                     <input 
                         type="password" 
                         placeholder="Senha: " 
-                        className="bg-white p-2 text-black rounded-3xl mb-4"
+                        className="bg-white p-3 text-black rounded-3xl mb-2 outline-none focus:ring-2 focus:ring-orange-500"
                         onChange={(e)=>setPassword(e.target.value)}
                     />
 
@@ -81,7 +83,7 @@ const RegisterPage = () => {
                     </div>
 
                     <button 
-                        className="text-white bg-orange-500 mb-4 p-2 rounded-lg mt-4 hover:bg-orange-600 transition-colors" 
+                        className="text-white bg-orange-500 p-3 rounded-xl mt-6 hover:bg-orange-600 transition-colors font-bold text-lg" 
                         onClick={handleRegister}
                     >
                         Confirmar
@@ -92,7 +94,7 @@ const RegisterPage = () => {
                 <img
                     src={logo}
                     alt="Logo"
-                    className="absolute -left-40 bottom-8 w-36 h-auto object-cover md:-left-48 md:w-48 lg:-left-60 hidden md:block"
+                    className="absolute -left-40 bottom-10 w-36 h-auto object-cover md:-left-48 md:w-48 lg:-left-60 hidden md:block z-0"
                 />
             </div>
         </div>
